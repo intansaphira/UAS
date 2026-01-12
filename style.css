@@ -1,0 +1,567 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f8f4ee;
+}
+
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #7b3b4a;
+  padding: 15px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: white;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+.btn-request {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: #f7edf0;
+  transition: 0.3s;
+}
+
+.btn-request:hover {
+  background: #8c6b73 ;
+  color: #f8f4ee;
+}
+
+/* CAROUSEL */
+.carousel {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 244, 238, 0),
+    #f8f4ee
+  );
+  pointer-events: none;
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+/* SERVICE */
+.service {
+  padding: 80px;
+  text-align: center;
+}
+
+.service h2 {
+  color: #7b3b4a;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #8c6b73;
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+
+.card {
+  background: #2f3e35;
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.card p {
+  color: #ebe1e4;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Kotak khusus untuk gambar */
+.card img {
+  width: 100%;
+  height: 220px;           
+  object-fit: cover;     
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+
+/* ORDER */
+.order-section {
+  background: #fbf5ef;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.order-section h2 {
+  color: #7b3b4a;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.order-subtitle {
+  color: #8c6b73;
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+
+.order-form {
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px 40px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #7b3b4a;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  background: #b97884;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #f1d6dc;
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: none;
+}
+
+.form-group.full {
+  grid-column: span 2;
+}
+
+.submit-btn {
+  margin-top: 25px;
+  align-self: flex-start;
+  background: #7b3b4a;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #5f2b37;
+}
+
+/* POPUP */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+  z-index: 999;
+}
+
+.popup.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.popup-box {
+  background: #fbf5ef;
+  padding: 40px 50px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 400px;
+  animation: popupScale 0.4s ease;
+}
+
+.popup-box h3 {
+  color: #7b3b4a;
+  margin-bottom: 10px;
+}
+
+.popup-box p {
+  color: #8c6b73;
+  margin-bottom: 25px;
+}
+
+.popup-box button {
+  background: #7b3b4a;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.popup-box button:hover {
+  background: #5f2b37;
+}
+
+@keyframes popupScale {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* WHAT OUR CUSTOMERS SAY */
+.testimonial-section {
+  background: #2f3e35;
+  margin: 80px auto;
+  border-radius: 40px;
+  padding: 70px 80px;
+  max-width: 1200px;
+}
+
+.testimonial-section h2 {
+  color: #f5f0ea;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 60px;
+  font-weight: 500;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 50px;
+  column-gap: 100px;
+}
+
+.testimonial-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #f5f0ea;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.testimonial-text h4 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.testimonial-text p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #d9d3cd;
+  max-width: 320px;
+}
+
+footer {
+  background: #7b3b4a;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+
+  /* ===== NAVBAR ===== */
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  /* sembunyikan menu desktop */
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 20px;
+    background: #7b3b4a;
+    width: 180px;
+    border-radius: 12px;
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: 0.3s ease;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 20px;
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  /* munculkan burger */
+  .burger {
+    display: flex;
+  }
+
+  /* kecilkan & geser tombol */
+  .btn-request {
+    padding: 6px 14px;
+    font-size: 12px;
+    border-radius: 16px;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  
+  /* ===== CAROUSEL ===== */
+  .carousel {
+    height: 38vh;
+  }
+
+  .overlay-text h1 {
+    font-size: 22px;
+  }
+
+  .overlay-text p {
+    font-size: 13px;
+  }
+
+  /* ===== SERVICE ===== */
+  .service {
+    padding: 50px 20px;
+  }
+
+  .service h2 {
+    font-size: 26px;
+  }
+
+  .service-cards {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 340px;
+    margin: auto;
+  }
+
+  /* ===== ORDER ===== */
+  .order-section {
+    padding: 50px 20px;
+  }
+
+  .order-section h2 {
+    font-size: 26px;
+  }
+
+  .order-form {
+    max-width: 360px;
+    margin: auto;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 18px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .form-group.full {
+    grid-column: span 2;
+  }
+
+  .submit-btn {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  /* ===== TESTIMONIAL ===== */
+  .testimonial-section {
+    padding: 50px 20px;
+    margin: 60px 20px;
+    border-radius: 30px;
+  }
+
+  .testimonial-section h2 {
+    font-size: 26px;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .testimonial-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .testimonial-text h4 {
+    font-size: 14px;
+  }
+
+  .testimonial-text p {
+    font-size: 12px;
+    max-width: 100%;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    font-size: 11px;
+    padding: 12px;
+  }
+}

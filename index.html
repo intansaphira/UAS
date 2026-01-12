@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senja Florist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">Senja Florist</div>
+
+  <ul class="nav-links">
+    <li><a data-target="#home" class="nav-link">Home</a></li>
+    <li><a data-target="#service" class="nav-link">Service</a></li>
+    <li><a data-target="#testi" class="nav-link">Testimonial</a></li>
+  </ul>
+
+  <button class="btn-request">Request Flowers</button>
+
+  <div class="burger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>  
+</nav>
+
+<!-- HOME / CAROUSEL -->
+<section id="home" class="carousel">
+  <div class="slides">
+
+    <div class="slide active">
+      <img src="https://i.pinimg.com/1200x/4f/ea/51/4fea51b444caa855e8c6a2e705ffaaf5.jpg" alt="">
+      <div class="overlay-text">
+        <h1>Moments That Bloom</h1>
+        <p>Every story deserves flowers</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://i.pinimg.com/1200x/59/d5/e4/59d5e4e64424cb7e7fb803fab40d9c4c.jpg" alt="">
+      <div class="overlay-text">
+        <h1>Fresh & Elegant</h1>
+        <p>Handcrafted with love</p>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://i.pinimg.com/736x/ae/9b/b4/ae9bb476e388053d0ab6874b197318bd.jpg" alt="">
+      <div class="overlay-text">
+        <h1>For Every Occasion</h1>
+        <p>Beautiful moments deserve beautiful flowers</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section id="service" class="service">
+  <h2>What We Do ?</h2>
+  <p class="subtitle">
+    We create meaningful floral experiences through thoughtfully designed bouquets and arrangements.<br>
+    From everyday moments to life’s special celebrations, we craft each bloom with care, beauty, and intention.
+  </p>
+
+  <div class="service-cards">
+
+    <div class="card">
+      <img src="https://i.pinimg.com/1200x/9c/1c/e9/9c1ce961cbc64ad1b8c1d9a4c180a18f.jpg">
+      <h3>Custom Bouquet</h3>
+      <p>Create a bouquet that reflects your feelings, choose the flowers, colors, and style you love.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://i.pinimg.com/1200x/02/2a/20/022a20d3afeebb20edd93f7c9f9f59ba.jpg">
+      <h3>Flower Arrangements</h3>
+      <p>Beautifully arranged flowers for birthdays, weddings, and special occasions.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://i.pinimg.com/1200x/d2/83/97/d283974d82cb8ee21b9c21d1db015ab6.jpg">
+      <h3>Flower Delivery</h3>
+      <p>Fresh flowers delivered with care, right to your loved one’s door.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- READY TO ORDER -->
+<section id="order" class="order-section">
+  <h2>Ready to order your flowers?</h2>
+  <p class="order-subtitle">
+    Enter your information and tell us your request, and our team will contact you shortly.
+  </p>
+
+  <div class="order-form">
+    <div class="form-group">
+      <label>Your Name</label>
+      <input id="name" type="text" placeholder="Ex. Intan Saphira">
+    </div>
+
+    <div class="form-group">
+      <label>Phone</label>
+      <input id="phone" type="text" placeholder="Enter Phone Number">
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input id="email" type="email" placeholder="example@gmail.com">
+    </div>
+
+    <div class="form-group">
+      <label>Occasion</label>
+      <input id="occasion" type="text" placeholder="Ex. Birthday">
+    </div>
+
+    <div class="form-group full">
+      <label>Your Message</label>
+      <textarea id="message" placeholder="Enter here..."></textarea>
+    
+      <button class="submit-btn" onclick="submitForm()">Submit</button>
+    </div>    
+  </div>
+</section>
+
+<div id="popup" class="popup">
+  <div class="popup-box">
+    <h3>Thank you 🌸</h3>
+    <p>Your flower request has been sent successfully.</p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+</div>
+
+<!-- TESTIMONIAL -->
+<section id="testi" class="testimonial-section">
+  <h2>What Our Customers Say</h2>
+
+  <div class="testimonial-grid">
+
+    <div class="testimonial-card">
+      <img src="https://i.pinimg.com/1200x/a1/db/61/a1db61585ec9952bb94d51b562d37352.jpg" class="avatar">
+      <div class="testimonial-text">
+        <h4>Bintang Abian</h4>
+        <p>
+          The flowers were absolutely beautiful and fresh.
+          My gf loved the bouquet so much!
+        </p>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="https://i.pinimg.com/736x/6e/02/2b/6e022bfcc2ac5f69811a70853918737a.jpg" class="avatar">
+      <div class="testimonial-text">
+        <h4>Angga Pramudya</h4>
+        <p>
+          I bought these for my girlfriend, now she loves
+          the flowers more than me. Worth it
+        </p>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="https://i.pinimg.com/736x/33/00/63/330063d92b9b221195cec330053a317c.jpg" class="avatar">
+      <div class="testimonial-text">
+        <h4>Liska Kustria</h4>
+        <p>
+          Amazing service and stunning arrangements.
+          Everything arrived perfectly on time
+        </p>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="https://i.pinimg.com/736x/13/f5/a8/13f5a8cb1fed603243dcc0bfb359c672.jpg" class="avatar">
+      <div class="testimonial-text">
+        <h4>Della Nazryani</h4>
+        <p>
+          The flowers were so beautiful that my cat tried
+          to eat them. 10/10 would order again
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <footer>© 2026 Senja Florist. All rights reserved.</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

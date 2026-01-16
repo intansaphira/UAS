@@ -48,7 +48,7 @@ Web Design course in the Information Systems program.
 
 ---
 ## 👤 Author
-Intan Saphira
+Intan Saphira |
 Information Systems Student
 
 ---
